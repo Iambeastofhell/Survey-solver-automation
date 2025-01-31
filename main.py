@@ -1,5 +1,9 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Firefox()
-browser.get('http://selenium.dev/')
-browser.get_full_page_screenshot_as_file('screenshot.png')
+driver = webdriver.Firefox()
+driver.get("https://w3schools.com")
+
+# Use JavaScript to select elements like jQuery
+elements = driver.execute_script("return document.querySelectorAll('.ga-nav');")
+print("wd", elements)
