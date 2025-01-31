@@ -42,7 +42,7 @@ class Bot:
         response = client.beta.chat.completions.parse(
             model="gemini-1.5-flash",
             n=1,
-            messages=self.history,
+            messages=self.history, #type: ignore
             response_format=ClickAction | KeyBoardAction,  # type: ignore
         )
         self.history.append(
